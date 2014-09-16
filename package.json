@@ -1,0 +1,25 @@
+{
+  "name": "ck-pastepurified",
+  "version": "0.1.0",
+  "author": "Robbert Broersma <mail@robbertbroersma.nl>",
+  "description": "Sanitize HTML pasted into CKEditor before anything else.",
+  "contributors": {
+    "name": "Robbert Broersma",
+    "mail": "mail@robbertbroersma.nl"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robbert/ck-pastepurified"
+  },
+  "keywords": [
+    "ckeditor",
+    "paste"
+  ],
+  "license": "© 2014, Robbert Broersma. All rights reserved.",
+  "engine": {
+    "node": ">=0.8"
+  },
+  "dependencies": {
+    "dompurify": "*"
+  }
+}
