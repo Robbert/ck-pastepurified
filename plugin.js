@@ -8,12 +8,18 @@ CKEDITOR.plugins.add('ck-pastepurified', {
 
             if (!(typeof DOMPurify === "object" && typeof DOMPurify.sanitize === "function"))
             {
-                console.log("Include purify.js from DOMPurify to enable the pastepurified plugin for CKEditor.");
+                try
+                {
+                    console.log("Include purify.js from DOMPurify to enable the pastepurified plugin for CKEditor.");
+                }
+                // Silently discard error
+                catch (e) {}
                 return;
             }
 
             var html = evt.data.dataValue;
 
+            // DOMPurify.sanitize() will return the input untreated when the browser isn't supported
             html = DOMPurify.sanitize(html);
 
             // Update the event to contain the 'purified' HTML
